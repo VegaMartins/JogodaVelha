@@ -10,6 +10,8 @@ void main() {
 class MyApp extends StatelessWidget {
   final AppDatabase database = AppDatabase();
 
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

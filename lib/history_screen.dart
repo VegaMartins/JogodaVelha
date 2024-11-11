@@ -4,13 +4,13 @@ import 'database.dart';
 class HistoryScreen extends StatelessWidget {
   final AppDatabase database;
 
-  const HistoryScreen({Key? key, required this.database}) : super(key: key);
+  const HistoryScreen({super.key, required this.database});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Histórico de Partidas',
-      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)),
+      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)),
       body: FutureBuilder<List<Game>>(
         future: database.getAllGames(),
         builder: (context, snapshot) {

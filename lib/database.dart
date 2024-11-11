@@ -8,7 +8,7 @@ class Games extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get playerX => text().withLength(min: 1, max: 50)();
   TextColumn get playerO => text().withLength(min: 1, max: 50)();
-  TextColumn get winner => text().nullable()(); // 'X', 'O' ou 'Draw'
+  TextColumn get winner => text().nullable()(); 
   DateTimeColumn get date => dateTime().withDefault(Constant(DateTime.now()))();
 }
 

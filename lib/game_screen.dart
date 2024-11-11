@@ -6,7 +6,7 @@ import 'database.dart';
 class TicTacToeGame extends StatefulWidget {
   final AppDatabase database;
 
-  const TicTacToeGame({Key? key, required this.database}) : super(key: key);
+  const TicTacToeGame({super.key, required this.database});
 
   @override
   _TicTacToeGameState createState() => _TicTacToeGameState();
@@ -60,8 +60,8 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
 
   void _saveGame(String winner) {
     final game = GamesCompanion(
-      playerX: drift.Value('Jogador X'),
-      playerO: drift.Value('Jogador O'),
+      playerX: const drift.Value('Jogador X'),
+      playerO: const drift.Value('Jogador O'),
       winner: drift.Value(winner),
       date: drift.Value(DateTime.now()),
     );
@@ -126,7 +126,6 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
           const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
-              // Navega para a tela de histórico de partidas
               Navigator.pushNamed(context, '/historico');
             },
             child: const Text('Histórico'),
